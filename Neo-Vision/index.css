@@ -1,0 +1,195 @@
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.home {
+    
+    height: 100vh;
+    width: 1024px;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+h1 {
+    font-size: 4em;
+    margin-bottom: 1em;
+}
+
+main{
+    background: url(src/assets/earth-orbit.png);
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-bottom: 3em;
+}
+
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+.get-started {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #2d3f58;
+  background: linear-gradient(to right, #171f31, #20394b, #171f31);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
+}
+
+.get-started svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.get-started span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.get-started:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+.get-started:hover span {
+  transform: translateX(7px);
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo {
+    margin-bottom: 2em;
+}
+
+.info-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.navigation a{
+    margin-left: 30px;
+}
+
+.second{
+    background-color: #0a0e12;
+    border-radius: 40px;
+    margin-top: -35px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.second h1{
+    text-align: center;
+    padding: 40px;
+
+}
+
+.second img{
+    width: 500px;
+    height: fit-content;
+}
+
+.second-contents{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.third{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .third-header {
+            margin-bottom: 20px;
+        }
+
+        .third-header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .third-header p {
+            font-size: 1.5em;
+            margin: 10px 0 0;
+        }
+
+        .third-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .third-text-section {
+            text-align: left;
+            width: 40%;
+        }
+
+        .third-text-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .third-text-section p {
+            margin-left: 50px;
+            max-width: 250px;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .third-image-section {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .third-image-section img {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+
