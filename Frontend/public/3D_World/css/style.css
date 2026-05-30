@@ -1,0 +1,212 @@
+body {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+canvas {
+    display: block;
+}
+
+.right {
+  text-align: right;
+}
+
+.help {
+  display: none; /* must be hidden in codepen's image preview */
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+
+  padding: 20px 30px;
+  
+  color: #e7f0f6;
+  
+  background: #292929;
+  background: rgba(41, 41, 41, 0.6);
+}
+
+.help .title {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.help p {
+  margin: 10px 0 0 0;
+  color: #97979c;
+  font-size: 14px;
+}
+
+.help a {
+  display: inline-block;
+  margin: 0;
+  padding: 6px 10px;
+  color: #fff;
+  font-size: 14px;
+  background: #337578;
+  text-decoration: none;
+}
+
+.help hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #337578;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+/* Asteroid Sidebar Styles */
+.asteroid-sidebar {
+    position: fixed;
+    top: 0;
+    left: -400px; /* Hidden by default */
+    width: 400px;
+    height: 100vh;
+    background: rgba(41, 41, 41, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 2px solid #337578;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    color: #e7f0f6;
+}
+
+.asteroid-sidebar.open {
+    left: 0; /* Slide in when open */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #337578;
+    background: rgba(51, 117, 120, 0.2);
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    color: #e7f0f6;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #e7f0f6;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+#asteroid-info {
+    line-height: 1.6;
+}
+
+#asteroid-info h3 {
+    color: #337578;
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#asteroid-info p {
+    margin: 10px 0;
+    color: #97979c;
+    font-size: 14px;
+}
+
+#asteroid-info strong {
+    color: #e7f0f6;
+}
+
+#asteroid-info ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+#asteroid-info li {
+    margin: 5px 0;
+    color: #97979c;
+    font-size: 14px;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: #337578;
+}
+
+.error {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #ff6b6b;
+}
+
+/* 3D Model Viewer Styles */
+#asteroid-model-viewer {
+    width: 100%;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #337578;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#asteroid-model-viewer canvas {
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+}
+
+.model-viewer-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #337578;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.model-viewer-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #337578;
+    font-size: 14px;
+}
+
+.model-viewer-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff6b6b;
+    font-size: 12px;
+    text-align: center;
+}

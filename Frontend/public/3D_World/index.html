@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>3D - Three.js # Learning : create Earth</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- Asteroid Details Sidebar -->
+        <div id="asteroid-sidebar" class="asteroid-sidebar">
+            <div class="sidebar-header">
+                <h2>Asteroid Details</h2>
+                <button id="close-sidebar" class="close-btn">&times;</button>
+            </div>
+            <div class="sidebar-content">
+                <div id="asteroid-model-viewer">
+                    <!-- 3D Model will be rendered here -->
+                </div>
+                <div id="asteroid-info">
+                    <p>Click on an asteroid to see its details...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="help">
+            <h1 class="title">CONTROLS (OrbitControls.js)</h1>
+            <p>Orbit - left mouse / touch: one finger move</p>
+            <p>Zoom - middle mouse, or mousewheel / touch: two finger spread or squish</p>
+            <p>Pan - right mouse, or arrow keys / touch: three finger swipe</p>
+            <hr>
+            <p>With controls panel, you can change more than 70 parameters.</p>
+            <p>Find all my resources in head of js file : Gist, textures, examples, etc :)</p>
+            <p class="right"><a href="https://twitter.com/jprivet_dev" target="_blank">@jprivet_dev</a></p>
+        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js'></script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/122460/dat.gui.min.js'></script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/122460/OrbitControls.js'></script>
+        <script>
+            // Load our compatible STL loader directly
+            function loadSTLLoader() {
+                return new Promise((resolve, reject) => {
+                    console.log('Loading local STL Loader for Three.js r79 compatibility...');
+                    const script = document.createElement('script');
+                    script.src = 'js/STLLoader.js';
+                    script.onload = () => {
+                        console.log('STL Loader loaded successfully');
+                        resolve();
+                    };
+                    script.onerror = () => {
+                        console.error('Failed to load STL Loader');
+                        reject(new Error('STL Loader could not be loaded'));
+                    };
+                    document.head.appendChild(script);
+                });
+            }
+            
+            // Load STL loader then main script
+            loadSTLLoader().then(() => {
+                const mainScript = document.createElement('script');
+                mainScript.src = 'js/script.js';
+                document.head.appendChild(mainScript);
+            }).catch((error) => {
+                console.error('STL Loader failed to load, loading main script anyway:', error);
+                const mainScript = document.createElement('script');
+                mainScript.src = 'js/script.js';
+                document.head.appendChild(mainScript);
+            });
+        </script>
+    </body>
+</html>
